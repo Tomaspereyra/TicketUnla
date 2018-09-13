@@ -4,13 +4,12 @@
 <hibernate-mapping>
 	<class name="datos.Usuario" table="usuario">
 		<id column="idUsuario" name="idUsuario">
-		<generator class = "foreign">
-             <param name = "property">cliente</param>
+		<generator class = "identity">
         </generator>
 		</id>
 		<property column="nombre" name="usuario" type="string" />
 		<property column="contraseña" name="contrasena" type="string" />
 		<property column="email" name="email" type="string" />
-		<one-to-one name="cliente" class="datos.Cliente"></one-to-one>
+		
 	</class>
 </hibernate-mapping>

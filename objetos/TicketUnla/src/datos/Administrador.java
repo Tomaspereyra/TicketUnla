@@ -1,7 +1,8 @@
 package datos;
 
 public class Administrador {
-	
+
+	private int idAdministrador;
 	private Usuario usuario;
 
 	public Administrador() {

@@ -6,15 +6,14 @@ public class Usuario {
 	private String usuario;
 	private String contrasena;
 	private String email;
-	
-	public Usuario(int idUsuario, String usuario, String contrasena, String email) {
-		this.idUsuario = idUsuario;
+
+	public Usuario() {
+	}
+
+	public Usuario(String usuario, String contrasena, String email) {
 		this.usuario = usuario;
 		this.contrasena = contrasena;
 		this.email = email;
-	}
-
-	public Usuario() {
 	}
 
 	public String getUsuario() {
@@ -40,14 +39,13 @@ public class Usuario {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	protected void setidUsuario(int idUsuario){
+
+	protected void setidUsuario(int idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	
-	public int getidUsuario(){
+
+	public int getidUsuario() {
 		return idUsuario;
 	}
-	
-	
+
 }
