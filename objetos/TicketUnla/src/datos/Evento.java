@@ -11,11 +11,11 @@ public class Evento {
 	private Set<Descuento> lstDescuentos;
 	private Auditorio auditorio;
 
-	protected Evento() {
+	public Evento() {
 
 	}
 
-	protected Evento(String nombre, String tipoEvento, Auditorio auditorio) {
+	public Evento(String nombre, String tipoEvento, Auditorio auditorio) {
 
 		this.nombre = nombre;
 		this.tipoEvento = tipoEvento;
