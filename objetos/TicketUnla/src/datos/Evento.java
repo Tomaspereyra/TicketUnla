@@ -1,26 +1,24 @@
 package datos;
-import java.util.ArrayList;
-import java.util.List;
+
+import java.util.Set;
 
 public class Evento {
-	
+
 	private int idEvento;
 	private String nombre;
-	private List<Funcion> lstFunciones;
+	private Set<Funcion> lstFunciones;
 	private String tipoEvento;
-	private List<Descuento> lstDescuentos;
+	private Set<Descuento> lstDescuentos;
 	private Auditorio auditorio;
-	
+
 	protected Evento() {
-		
+
 	}
 
 	protected Evento(String nombre, String tipoEvento, Auditorio auditorio) {
-		
+
 		this.nombre = nombre;
-		this.lstFunciones = new ArrayList<Funcion>();
 		this.tipoEvento = tipoEvento;
-		this.lstDescuentos = new ArrayList<Descuento>();
 		this.auditorio = auditorio;
 	}
 
@@ -32,11 +30,11 @@ public class Evento {
 		this.nombre = nombre;
 	}
 
-	public List<Funcion> getLstFunciones() {
+	public Set<Funcion> getLstFunciones() {
 		return lstFunciones;
 	}
 
-	public void setLstFunciones(ArrayList<Funcion> lstFunciones) {
+	public void setLstFunciones(Set<Funcion> lstFunciones) {
 		this.lstFunciones = lstFunciones;
 	}
 
@@ -48,11 +46,11 @@ public class Evento {
 		this.tipoEvento = tipoEvento;
 	}
 
-	public List<Descuento> getLstDescuentos() {
+	public Set<Descuento> getLstDescuentos() {
 		return lstDescuentos;
 	}
 
-	public void setLstDescuentos(ArrayList<Descuento> lstDescuentos) {
+	public void setLstDescuentos(Set<Descuento> lstDescuentos) {
 		this.lstDescuentos = lstDescuentos;
 	}
 
@@ -71,7 +69,5 @@ public class Evento {
 	protected void setIdEvento(int idEvento) {
 		this.idEvento = idEvento;
 	}
-	
-	
 
 }

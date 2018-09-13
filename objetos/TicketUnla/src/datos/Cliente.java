@@ -1,7 +1,7 @@
 package datos;
+
 import java.util.GregorianCalendar;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Cliente {
 	private int idCliente;
@@ -9,21 +9,19 @@ public class Cliente {
 	private String nombre;
 	private String apellido;
 	private GregorianCalendar fechaNacimiento;
-	private List<Reserva> lstReservas;
+	private Set<Reserva> lstReservas;
 	private Usuario usuario;
 
-	
 	public Cliente() {
-		
+
 	}
 
 	public Cliente(int dni, String nombre, String apellido, GregorianCalendar fechaNacimiento, Usuario usuario) {
-		
+
 		this.dni = dni;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.fechaNacimiento = fechaNacimiento;
-		this.lstReservas = new ArrayList<Reserva>();
 		this.usuario = usuario;
 	}
 
@@ -59,11 +57,11 @@ public class Cliente {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public List<Reserva> getLstReservas() {
+	public Set<Reserva> getLstReservas() {
 		return lstReservas;
 	}
 
-	public void setLstReservas(ArrayList<Reserva> lstReservas) {
+	public void setLstReservas(Set<Reserva> lstReservas) {
 		this.lstReservas = lstReservas;
 	}
 
@@ -74,7 +72,13 @@ public class Cliente {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-	
-	
+
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	protected void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
 
 }

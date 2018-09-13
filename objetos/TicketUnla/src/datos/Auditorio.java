@@ -1,30 +1,27 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class Auditorio {
-	
+
 	private int idAuditorio;
 	private String nombre;
 	private String direccion;
 	private int capacidad;
 	private String tipoAuditorio;
-	private List<Evento> lstEventos;
-	private List<Funcion> lstFunciones;
-	
+	private Set<Evento> lstEventos;
+	private Set<Funcion> lstFunciones;
+
 	public Auditorio() {
-		
+
 	}
 
 	public Auditorio(String nombre, String direccion, int capacidad, String tipoAuditorio) {
-	
+
 		this.nombre = nombre;
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.tipoAuditorio = tipoAuditorio;
-		this.lstEventos = new ArrayList<Evento>();
-		this.lstFunciones = new ArrayList<Funcion>();
 	}
 
 	public String getNombre() {
@@ -59,19 +56,19 @@ public class Auditorio {
 		this.tipoAuditorio = tipoAuditorio;
 	}
 
-	public List<Evento> getLstEventos() {
+	public Set<Evento> getLstEventos() {
 		return lstEventos;
 	}
 
-	public void setLstEventos(ArrayList<Evento> lstEventos) {
+	public void setLstEventos(Set<Evento> lstEventos) {
 		this.lstEventos = lstEventos;
 	}
 
-	public List<Funcion> getLstFunciones() {
+	public Set<Funcion> getLstFunciones() {
 		return lstFunciones;
 	}
 
-	public void setLstFunciones(ArrayList<Funcion> lstFunciones) {
+	public void setLstFunciones(Set<Funcion> lstFunciones) {
 		this.lstFunciones = lstFunciones;
 	}
 
@@ -82,8 +79,5 @@ public class Auditorio {
 	protected void setIdAuditorio(int idAuditorio) {
 		this.idAuditorio = idAuditorio;
 	}
- 
-	
-	
-	
+
 }

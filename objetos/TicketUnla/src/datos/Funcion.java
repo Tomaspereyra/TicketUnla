@@ -1,28 +1,27 @@
 package datos;
 
-import java.util.GregorianCalendar;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.GregorianCalendar;
+import java.util.Set;
 
 public class Funcion {
-	
+
 	private int idFuncion;
 	private GregorianCalendar horaFecha;
-	private ArrayList<Reserva> lstReservas;
+	private Set<Reserva> lstReservas;
 	private Evento evento;
-	private List<Sector> lstSectores;
-	
+	private Set<Sector> lstSectores;
+
 	protected Funcion() {
-		
+
 	}
 
 	protected Funcion(int idFuncion, GregorianCalendar horaFecha, ArrayList<Reserva> lstReservas, Evento evento) {
-		
+
 		this.idFuncion = idFuncion;
 		this.horaFecha = horaFecha;
-		this.lstReservas = lstReservas;
 		this.evento = evento;
-		this.lstSectores = new ArrayList<Sector>();
+
 	}
 
 	public GregorianCalendar getHoraFecha() {
@@ -33,11 +32,11 @@ public class Funcion {
 		this.horaFecha = horaFecha;
 	}
 
-	public ArrayList<Reserva> getLstReservas() {
+	public Set<Reserva> getLstReservas() {
 		return lstReservas;
 	}
 
-	public void setLstReservas(ArrayList<Reserva> lstReservas) {
+	public void setLstReservas(Set<Reserva> lstReservas) {
 		this.lstReservas = lstReservas;
 	}
 
@@ -49,11 +48,11 @@ public class Funcion {
 		this.evento = evento;
 	}
 
-	public List<Sector> getLstSectores() {
+	public Set<Sector> getLstSectores() {
 		return lstSectores;
 	}
 
-	public void setLstSectores(ArrayList<Sector> lstSectores) {
+	public void setLstSectores(Set<Sector> lstSectores) {
 		this.lstSectores = lstSectores;
 	}
 
@@ -64,7 +63,5 @@ public class Funcion {
 	protected void setIdFuncion(int idFuncion) {
 		this.idFuncion = idFuncion;
 	}
-	
-	
-	
+
 }
