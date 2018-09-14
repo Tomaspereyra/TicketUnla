@@ -14,8 +14,11 @@
   <mapping class="datos.Usuario" resource="mapeos/Usuario.hbm.xml"/>
   <mapping class="datos.Cliente" resource="mapeos/Cliente.hbm.xml"/>
   <mapping class="datos.Evento" resource="mapeos/Evento.hbm.xml"/>
-  <mapping class="datos.Auditorio" resource="mapeos/Auditorio.hbm.xml"/>
   <mapping class="datos.Descuento" resource="mapeos/Descuento.hbm.xml"/>
+  <mapping class="datos.Auditorio" resource="mapeos/Auditorio.hbm.xml"/>
+  <mapping class="datos.Sector" resource="mapeos/Sector.hbm.xml"/>
+  
+  
   
  </session-factory>
 </hibernate-configuration>

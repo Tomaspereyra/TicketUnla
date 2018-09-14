@@ -11,6 +11,7 @@ public class Auditorio {
 	private String tipoAuditorio;
 	private Set<Evento> lstEventos;
 	private Set<Funcion> lstFunciones;
+	private Set<Sector> lstSectores;
 
 	public Auditorio() {
 
@@ -22,6 +23,7 @@ public class Auditorio {
 		this.direccion = direccion;
 		this.capacidad = capacidad;
 		this.tipoAuditorio = tipoAuditorio;
+
 	}
 
 	public String getNombre() {
@@ -78,6 +80,14 @@ public class Auditorio {
 
 	protected void setIdAuditorio(int idAuditorio) {
 		this.idAuditorio = idAuditorio;
+	}
+
+	public Set<Sector> getLstSectores() {
+		return lstSectores;
+	}
+
+	public void setLstSectores(Set<Sector> lstSectores) {
+		this.lstSectores = lstSectores;
 	}
 
 }

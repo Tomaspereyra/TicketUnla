@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="datos.Auditorio" table="auditorio">
-		<id column="idAuditorio" name="idAuditorio">
+		<id column="idauditorio" name="idAuditorio">
 			<generator class="identity">
 			</generator>
 		</id>
@@ -13,8 +13,13 @@
 		<property column="tipoAuditorio" name="tipoAuditorio" type="string"/>
 		<set name="lstEventos" table="evento" order-by="idEvento asc" inverse="true" 
 		   lazy="true" fetch="select">
-			<key column="idAuditorio" not-null="true"/>
+			<key column="idauditorio" not-null="true"/>
 			<one-to-many class="datos.Evento"/>
+		</set>
+		<set name="lstSectores" table="sector" order-by="idSector asc" inverse="true" 
+		   lazy="true" fetch="select">
+			<key column="idauditorio" not-null="true"/>
+			<one-to-many class="datos.Sector"/>
 		</set>
 
 

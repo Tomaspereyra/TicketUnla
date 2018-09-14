@@ -1,28 +1,28 @@
 package datos;
 
 public class Sector {
-	
-	private String tipoSector;
+
 	private int idSector;
+	private String tipoSector;
 	private int precio;
 	private String descripcion;
 	private int capacidadTotal;
-	
-	
+	private Auditorio auditorio;
+
 	public Sector() {
-	
+
 	}
-	
-	public Sector(String tipoSector, int idSector, int precio, String descripcion, int capacidadTotal) {
-		
+
+	public Sector(String tipoSector, int precio, String descripcion, int capacidadTotal, Auditorio auditorio) {
+
 		this.tipoSector = tipoSector;
-		this.idSector = idSector;
 		this.precio = precio;
 		this.descripcion = descripcion;
 		this.capacidadTotal = capacidadTotal;
+		this.auditorio = auditorio;
+
 	}
 
-	
 	public String getTipoSector() {
 		return tipoSector;
 	}
@@ -35,7 +35,7 @@ public class Sector {
 		return idSector;
 	}
 
-	public void setIdSector(int idSector) {
+	protected void setIdSector(int idSector) {
 		this.idSector = idSector;
 	}
 
@@ -62,8 +62,13 @@ public class Sector {
 	public void setCapacidadTotal(int capacidadTotal) {
 		this.capacidadTotal = capacidadTotal;
 	}
-	
-	
-	
+
+	public Auditorio getAuditorio() {
+		return auditorio;
+	}
+
+	public void setAuditorio(Auditorio auditorio) {
+		this.auditorio = auditorio;
+	}
 
 }

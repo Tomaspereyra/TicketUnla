@@ -4,11 +4,13 @@ import dao.AuditorioDao;
 import dao.ClienteDao;
 import dao.DescuentoDao;
 import dao.EventoDao;
+import dao.SectorDao;
 import dao.UsuarioDao;
 import datos.Auditorio;
 import datos.Cliente;
 import datos.Descuento;
 import datos.Evento;
+import datos.Sector;
 import datos.Usuario;
 
 public class Test {
@@ -16,7 +18,7 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Usuario u = new Usuario("asdas", "asadd", "qweqwe");
+		Usuario u = new Usuario();
 		UsuarioDao.getIntance().agregar(u);
 
 		Usuario bus = UsuarioDao.getIntance().traerUsuario(1);
@@ -36,6 +38,10 @@ public class Test {
 		Descuento d = new Descuento(50, "uno");
 		d.setEvento(e);
 		DescuentoDao.getIntance().agregar(d);
+
+		Sector s = new Sector();
+		s.setAuditorio(AuditorioDao.getIntance().traerAuditorio(1));
+		SectorDao.getIntance().agregar(s);
 
 	}
 }
