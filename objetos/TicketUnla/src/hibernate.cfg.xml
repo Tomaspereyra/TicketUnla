@@ -17,9 +17,7 @@
   <mapping class="datos.Descuento" resource="mapeos/Descuento.hbm.xml"/>
   <mapping class="datos.Auditorio" resource="mapeos/Auditorio.hbm.xml"/>
   <mapping class="datos.Sector" resource="mapeos/Sector.hbm.xml"/>
-  <mapping class="datos.Administrador" resource="mapeos/Administrador.hbm.xml"/>
-  <mapping class="datos.Asiento" resource="mapeos/Asiento.hbm.xml"/>
-  <mapping class="datos.Vendedor" resource="mapeos/Vendedor.hbm.xml"/>
+  
   
   
  </session-factory>
