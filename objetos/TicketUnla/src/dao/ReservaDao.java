@@ -4,22 +4,22 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Auditorio;
+import datos.Reserva;
 
-public class AuditorioDao {
+public class ReservaDao {
 	private static Session session;
 	private Transaction tx;
 
 	/*-----------------PATRON SINGLETON-----------------*/
 
-	private static AuditorioDao instancia = null;
+	private static ReservaDao instancia = null;
 
-	protected AuditorioDao() {
+	protected ReservaDao() {
 	}
 
-	public static AuditorioDao getIntance() {
+	public static ReservaDao getIntance() {
 		if (instancia == null)
-			instancia = new AuditorioDao();
+			instancia = new ReservaDao();
 		return instancia;
 	}
 
@@ -35,7 +35,7 @@ public class AuditorioDao {
 		throw new HibernateException("ERROR en la capa de acceso de datos", he);
 	}
 
-	public int agregar(Auditorio objeto) {
+	public int agregar(Reserva objeto) {
 		int id = 0;
 		try {
 			iniciaOperacion();
@@ -50,7 +50,7 @@ public class AuditorioDao {
 		return id;
 	}
 
-	public void actualizar(Auditorio objeto) throws HibernateException {
+	public void actualizar(Reserva objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.update(objeto);
@@ -63,7 +63,7 @@ public class AuditorioDao {
 		}
 	}
 
-	public void eliminar(Auditorio objeto) throws HibernateException {
+	public void eliminar(Reserva objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -76,12 +76,12 @@ public class AuditorioDao {
 		}
 	}
 
-	public Auditorio traerAuditorio(String nombre) throws HibernateException {
-		Auditorio objeto = null;
+	public Reserva traerReserva(int idReserva) throws HibernateException {
+		Reserva objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Auditorio) session.createQuery("from Auditorio a where a.nombre=" + nombre).uniqueResult();
+			objeto = (Reserva) session.get(Reserva.class, idReserva);
 		} finally {
 			session.close();
 		}

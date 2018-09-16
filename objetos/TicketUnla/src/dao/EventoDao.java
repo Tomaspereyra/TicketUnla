@@ -76,12 +76,12 @@ public class EventoDao {
 		}
 	}
 
-	public Evento traerEvento(int idEvento) throws HibernateException {
+	public Evento traerEvento(String nombre) throws HibernateException {
 		Evento objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Evento) session.get(Evento.class, idEvento);
+			objeto = (Evento) session.createQuery("from Evento e where e.nombre=" + nombre).uniqueResult();
 		} finally {
 			session.close();
 		}

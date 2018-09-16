@@ -63,7 +63,7 @@ public class DescuentoDao {
 		}
 	}
 
-	public void eleminar(Descuento objeto) throws HibernateException {
+	public void eliminar(Descuento objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -76,12 +76,12 @@ public class DescuentoDao {
 		}
 	}
 
-	public Descuento traerDescuento(int idDescuento) throws HibernateException {
+	public Descuento traerDescuento(String codigo) throws HibernateException {
 		Descuento objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Descuento) session.get(Descuento.class, idDescuento);
+			objeto = (Descuento) session.createQuery("from Descuento d where d.codigo=" + codigo).uniqueResult();
 		} finally {
 			session.close();
 		}

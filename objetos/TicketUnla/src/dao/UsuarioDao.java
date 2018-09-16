@@ -63,7 +63,7 @@ public class UsuarioDao {
 		}
 	}
 
-	public void eleminar(Usuario objeto) throws HibernateException {
+	public void eliminar(Usuario objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -76,12 +76,12 @@ public class UsuarioDao {
 		}
 	}
 
-	public Usuario traerUsuario(int idUsuario) throws HibernateException {
+	public Usuario traerUsuario(String usuario) throws HibernateException {
 		Usuario objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Usuario) session.get(Usuario.class, idUsuario);
+			objeto = (Usuario) session.createQuery("from Usuario u where u.nombre" + usuario).uniqueResult();
 		} finally {
 			session.close();
 		}

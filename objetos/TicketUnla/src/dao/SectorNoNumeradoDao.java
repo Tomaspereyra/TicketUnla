@@ -4,22 +4,22 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import datos.Auditorio;
+import datos.SectorNoNumerado;
 
-public class AuditorioDao {
+public class SectorNoNumeradoDao {
 	private static Session session;
 	private Transaction tx;
 
 	/*-----------------PATRON SINGLETON-----------------*/
 
-	private static AuditorioDao instancia = null;
+	private static SectorNoNumeradoDao instancia = null;
 
-	protected AuditorioDao() {
+	protected SectorNoNumeradoDao() {
 	}
 
-	public static AuditorioDao getIntance() {
+	public static SectorNoNumeradoDao getIntance() {
 		if (instancia == null)
-			instancia = new AuditorioDao();
+			instancia = new SectorNoNumeradoDao();
 		return instancia;
 	}
 
@@ -35,7 +35,7 @@ public class AuditorioDao {
 		throw new HibernateException("ERROR en la capa de acceso de datos", he);
 	}
 
-	public int agregar(Auditorio objeto) {
+	public int agregar(SectorNoNumerado objeto) {
 		int id = 0;
 		try {
 			iniciaOperacion();
@@ -50,7 +50,7 @@ public class AuditorioDao {
 		return id;
 	}
 
-	public void actualizar(Auditorio objeto) throws HibernateException {
+	public void actualizar(SectorNoNumerado objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.update(objeto);
@@ -63,7 +63,7 @@ public class AuditorioDao {
 		}
 	}
 
-	public void eliminar(Auditorio objeto) throws HibernateException {
+	public void eliminar(SectorNoNumerado objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
@@ -76,12 +76,12 @@ public class AuditorioDao {
 		}
 	}
 
-	public Auditorio traerAuditorio(String nombre) throws HibernateException {
-		Auditorio objeto = null;
+	public SectorNoNumerado traerSectorNoNumerado(int idSectorNoNumerado) throws HibernateException {
+		SectorNoNumerado objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Auditorio) session.createQuery("from Auditorio a where a.nombre=" + nombre).uniqueResult();
+			objeto = (SectorNoNumerado) session.get(SectorNoNumerado.class, idSectorNoNumerado);
 		} finally {
 			session.close();
 		}

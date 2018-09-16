@@ -63,7 +63,7 @@ public class ClienteDao {
 		}
 	}
 
-	public void eleminar(Cliente objeto) throws HibernateException {
+	public void eliminar(Cliente objeto) throws HibernateException {
 		try {
 			iniciaOperacion();
 			session.delete(objeto);
