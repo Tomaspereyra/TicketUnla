@@ -17,6 +17,9 @@
   <mapping class="datos.Descuento" resource="mapeos/Descuento.hbm.xml"/>
   <mapping class="datos.Auditorio" resource="mapeos/Auditorio.hbm.xml"/>
   <mapping class="datos.Sector" resource="mapeos/Sector.hbm.xml"/>
+  <mapping class="datos.Funcion" resource="mapeos/Funcion.hbm.xml"/>
+  <mapping class="datos.Reserva" resource="mapeos/Reserva.hbm.xml"/>
+  <mapping class="datos.Asiento" resource="mapeos/Asiento.hbm.xml"/>
   
   
   

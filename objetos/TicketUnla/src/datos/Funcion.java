@@ -1,6 +1,5 @@
 package datos;
 
-import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.Set;
 
@@ -12,13 +11,12 @@ public class Funcion {
 	private Evento evento;
 	private Set<Sector> lstSectores;
 
-	protected Funcion() {
+	public Funcion() {
 
 	}
 
-	protected Funcion(int idFuncion, GregorianCalendar horaFecha, ArrayList<Reserva> lstReservas, Evento evento) {
+	public Funcion(GregorianCalendar horaFecha, Evento evento) {
 
-		this.idFuncion = idFuncion;
 		this.horaFecha = horaFecha;
 		this.evento = evento;
 

@@ -9,7 +9,7 @@
 		</id>
 		<property column="codigo" name="codigo" type="string"/>
 		
-		<many-to-one name="sectorNumerado" class="datos.SectorNumerado" column="idSectorNumerado"
+		<many-to-one name="sectorNumerado" class="datos.SectorNumerado" column="sectorNumerado_idSector"
 		not-null="true"/>
 		
 	</class>

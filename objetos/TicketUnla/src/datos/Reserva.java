@@ -13,11 +13,10 @@ public class Reserva {
 
 	}
 
-	public Reserva(Funcion funcion, Cliente cliente, int idReserva) {
+	public Reserva(Funcion funcion, Cliente cliente) {
 
 		this.funcion = funcion;
 		this.cliente = cliente;
-		this.idReserva = idReserva;
 	}
 
 	public Funcion getFuncion() {
@@ -50,6 +49,14 @@ public class Reserva {
 
 	public int getIdReserva() {
 		return idReserva;
+	}
+
+	public Set<Sector> getLstSectorReservado() {
+		return lstSectorReservado;
+	}
+
+	public void setLstSectorReservado(Set<Sector> lstSectorReservado) {
+		this.lstSectorReservado = lstSectorReservado;
 	}
 
 }

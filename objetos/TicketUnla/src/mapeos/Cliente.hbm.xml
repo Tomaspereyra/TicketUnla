@@ -12,7 +12,12 @@
 		<property column="nombre" name="nombre" type="string" />
 		<property column="apellido" name="apellido" type="string" />
 		<property column="fechaNacimiento" name="fechaNacimiento" type="string" />
-		
+		<set name = "lstReservas" table = "reserva" order-by = "idreserva asc" inverse = "true"
+           lazy="true" fetch="select">
+            <key column = "idCliente" not-null = "true" />
+        <one-to-many class = "datos.Reserva" />
+        </set>
+        
 		<one-to-one name="usuario" class="datos.Usuario"></one-to-one>
 	</class>
 </hibernate-mapping>

@@ -1,11 +1,10 @@
 package datos;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 
 public class SectorNumerado extends Sector {
 
-	private List<Asiento> lstAsientos;
+	private Set<Asiento> lstAsientos;
 
 	public SectorNumerado() {
 
@@ -13,12 +12,14 @@ public class SectorNumerado extends Sector {
 
 	public SectorNumerado(String tipoSector, int precio, String descripcion, int capacidadTotal, Auditorio auditorio) {
 		super(tipoSector, precio, descripcion, capacidadTotal, auditorio);
-
-		this.lstAsientos = new ArrayList<Asiento>();
 	}
 
-	public List<Asiento> getLstAsientos() {
+	public Set<Asiento> getLstAsientos() {
 		return lstAsientos;
+	}
+
+	public void setLstAsientos(Set<Asiento> lstAsientos) {
+		this.lstAsientos = lstAsientos;
 	}
 
 }
