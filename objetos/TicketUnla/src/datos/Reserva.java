@@ -7,7 +7,7 @@ public class Reserva {
 	private Funcion funcion;
 	private Cliente cliente;
 	private int idReserva;
-	private Set<Sector> lstSectorReservado;
+	private Set<Ubicacion> lstUbicacionesReservadas;
 
 	public Reserva() {
 
@@ -35,14 +35,6 @@ public class Reserva {
 		this.cliente = cliente;
 	}
 
-	public Set<Sector> getlstSectorReservado() {
-		return lstSectorReservado;
-	}
-
-	public void setlstSectorReservado(Set<Sector> lstSectorReservado) {
-		this.lstSectorReservado = lstSectorReservado;
-	}
-
 	protected void setIdReserva(int idReserva) {
 		this.idReserva = idReserva;
 	}
@@ -51,12 +43,12 @@ public class Reserva {
 		return idReserva;
 	}
 
-	public Set<Sector> getLstSectorReservado() {
-		return lstSectorReservado;
+	public Set<Ubicacion> getLstUbicacionesReservadas() {
+		return lstUbicacionesReservadas;
 	}
 
-	public void setLstSectorReservado(Set<Sector> lstSectorReservado) {
-		this.lstSectorReservado = lstSectorReservado;
+	public void setLstUbicacionesReservadas(Set<Ubicacion> lstUbicacionesReservadas) {
+		this.lstUbicacionesReservadas = lstUbicacionesReservadas;
 	}
 
 }

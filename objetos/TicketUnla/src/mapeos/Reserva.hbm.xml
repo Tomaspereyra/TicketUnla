@@ -15,10 +15,10 @@
 			not-null="true" />
 
 
-		<set name="lstSectorReservado" table="sector" inverse="true" lazy="true"
+		<set name="lstUbicacionesReservadas" table="ubicacion" inverse="true" lazy="true"
 			fetch="select">
 			<key column="idreserva" not-null="true" />
-			<one-to-many class="datos.Sector" />
+			<one-to-many class="datos.Ubicacion" />
 		</set>
 
 

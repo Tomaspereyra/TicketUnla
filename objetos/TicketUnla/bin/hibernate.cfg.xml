@@ -20,7 +20,7 @@
   <mapping class="datos.Funcion" resource="mapeos/Funcion.hbm.xml"/>
   <mapping class="datos.Reserva" resource="mapeos/Reserva.hbm.xml"/>
   <mapping class="datos.Asiento" resource="mapeos/Asiento.hbm.xml"/>
-  
+  <mapping class="datos.Ubicacion" resource="mapeos/Ubicacion.hbm.xml"/>
   
   
  </session-factory>
