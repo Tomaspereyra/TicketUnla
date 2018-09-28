@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="datos.Cliente" table="cliente">
+		<id column="idCliente" name="idCliente">
+		<generator class = "foreign">
+             <param name = "property">usuario</param>
+        </generator>
+		</id>
+		<property column="dni" name="dni" type="int" />
+		<property column="nombre" name="nombre" type="string" />
+		<property column="apellido" name="apellido" type="string" />
+		<property column="fechaNacimiento" name="fechaNacimiento" type="string" />
+		<set name = "lstReservas" table = "reserva" order-by = "idreserva asc" inverse = "true"
+           lazy="true" fetch="select">
+            <key column = "idCliente" not-null = "true" />
+        <one-to-many class = "datos.Reserva" />
+        </set>
+        
+		<one-to-one name="usuario" class="datos.Usuario"></one-to-one>
+	</class>
+</hibernate-mapping>
