@@ -1,0 +1,125 @@
+@charset "ISO-8859-1";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #9ccde4;
+}
+
+header , .main, footer{
+	background: #9ccde4;
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+}
+
+header nav{
+	background: black;
+	overflow: hidden;
+}
+
+header nav ul{
+	list-style: none;
+}
+
+header nav ul li{
+	float: left;
+}
+
+header nav ul li a{
+	padding: 10px 20px;
+	display: block;
+	color: white;
+	text-decoration: none;
+}
+
+header nav ul li a:hover{
+	background: #e2e2e2;
+	color: black;
+}
+
+.main .articulos{
+	width: 100%;
+	float: left;
+}
+
+.main .articulos article{
+	background: white;
+	padding: 20px;
+	margin-bottom: 20px;
+
+}
+
+aside{
+	width: 30%;
+	float: left;
+	background: #ffffb3;	
+	padding: 20px;
+	box-sizing: border-box;
+	margin-bottom: 20px;
+}
+
+footer{
+	background: black;
+	color: white;
+	clear: both;
+	padding: 10px 0px;
+	text-align: center;
+}
+
+.formulario{
+	background: white;
+	width: 30%;
+	border: 1px solid #ccc;
+	margin: 0px 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	display: block;
+	float: left:
+}
+
+label{
+	front-size: 12px;
+	display: block;
+	width: 100%;
+}
+
+.buscador input{
+	margin-top: 5px;
+	margin-left: 335px;
+	max-width: 150px;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+.buscador input:focus{
+	border: 1px solid #1668c4;
+}
+
+.formulario input{
+	margin-bottom: 20px;
+	width: 100%;
+	padding: 5px;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+}
+
+.formulario input:focus{
+	border: 1px solid #1668c4;
+}
+
+.formulario input[type="submit"]{
+	margin-bottom: 0;
+	background: #1668c4;
+	color: white;
+	border: none;
+}
+
+.formulario input[type="submit"]:hover{
+	background: #4a88f4;
+	cursor: pointer;
+}
