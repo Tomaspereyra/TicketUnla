@@ -4,7 +4,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.List;
 import datos.Asiento;
+import datos.SectorNumerado;
 
 public class AsientoDao {
 	private static Session session;
@@ -86,6 +88,20 @@ public class AsientoDao {
 			session.close();
 		}
 		return objeto;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Asiento> traerAsientos(SectorNumerado s){
+		List<Asiento> lista=null;
+		try {
+			iniciaOperacion();
+			String hql="from Asiento a inner join fetch a.sectorNumerado s where s.idSector="+s.getIdSector();
+			lista = session.createQuery(hql).list();
+		}
+		finally {
+			session.close();
+		}
+		return lista;
 	}
 
 }

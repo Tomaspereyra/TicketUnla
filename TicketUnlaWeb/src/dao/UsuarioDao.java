@@ -76,12 +76,12 @@ public class UsuarioDao {
 		}
 	}
 
-	public Usuario traerUsuario(String usuario) throws HibernateException {
+	public Usuario traerUsuario(int usuario) throws HibernateException {
 		Usuario objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Usuario) session.createQuery("from Usuario u where u.nombre="+usuario).uniqueResult();
+			objeto = (Usuario) session.createQuery("from Usuario u where u.idUsuario="+usuario).uniqueResult();
 		} finally {
 			session.close();
 		}

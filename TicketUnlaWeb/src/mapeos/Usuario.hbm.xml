@@ -7,7 +7,7 @@
 		<generator class = "identity">
         </generator>
 		</id>
-		<property column="nombre" name="usuario" type="string" />
+		<property column="nombre" name="nombre" type="string" />
 		<property column="contraseña" name="contrasena" type="string" />
 		<property column="email" name="email" type="string" />
 		

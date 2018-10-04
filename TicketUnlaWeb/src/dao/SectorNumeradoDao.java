@@ -1,5 +1,6 @@
 package dao;
 
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -86,6 +87,21 @@ public class SectorNumeradoDao {
 			session.close();
 		}
 		return objeto;
+	}
+	
+	public SectorNumerado traerSectorNumeradoYAsientos(int idSectorNumerado) throws HibernateException{
+		SectorNumerado objeto = null;
+		try {
+			iniciaOperacion();
+			String hql ="from SectorNumerado s where s.idSector="+idSectorNumerado;
+			objeto = (SectorNumerado) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getLstAsientos());
+		}
+		finally {
+			session.close();
+		}
+		return objeto;
+		
 	}
 
 }
