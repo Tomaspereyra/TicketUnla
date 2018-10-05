@@ -1,12 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import= "datos.Funcion"%>
-<%@ page import= "dao.EventoDao" %>
-<%@ page import= "datos.Evento" %>
-<%@ page import= "java.util.List" %>
-<%@ page import = "dao.FuncionDao" %>
+<%@ page import="dao.FuncionDao" %>
+<%@ page import="datos.Funcion" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en">
+<html lang="es">
 <head>
     <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
@@ -16,7 +14,7 @@
     <meta name="author" content="ColorLib">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- ========== Title ========== -->
-    <title> Eventos</title>
+    <title> Funciones</title>
     <!-- ========== Favicon Ico ========== -->
     <!--<link rel="icon" href="fav.ico">-->
     <!-- ========== STYLESHEETS ========== -->
@@ -33,19 +31,12 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
-    <script src="assets/js/jquery.min.js"></script>
-    
-    <script type = "text/javascrip">
-            $(document).ready(function(){
-             var 
-    </script>
 </head>
 <body>
 <div class="loader">
     <div class="loader-outter"></div>
     <div class="loader-inner"></div>
 </div>
-
 <!--header start here -->
 <header class="header navbar fixed-top navbar-expand-md">
     <div class="container">
@@ -83,7 +74,6 @@
     </div>
 </header>
 <!--header end here-->
-
 <!--page title section-->
 <section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/bg/bg-img.png">
     <div class="overlay_dark"></div>
@@ -92,7 +82,7 @@
             <div class="col-12">
                 <div class="inner_cover_content">
                     <h3>
-                       Eventos
+                       Funciones
                     </h3>
                 </div>
             </div>
@@ -101,36 +91,41 @@
         <div class="breadcrumbs">
             <ul>
                 <li><a href="/TicketUnlaWeb/index.html">Inicio</a>  |   </li>
-                <li><span>Events</span></li>
+                <li><span>Funciones</span></li>
             </ul>
         </div>
     </div>
 </section>
 <!--page title section end-->
 
-
-<!--events section -->
 <section class="pt100 pb100">
     <div class="container">
-		<% List<Evento> eventos = EventoDao.getIntance().traerEventos(); 
-    		for (Evento e : eventos) { %>
+  
+   
+		<% List<Funcion> funciones = (List)request.getAttribute("funciones"); 
+    		for (Funcion f : funciones) { %>
     			
     		<div class="event_box">
 			<img src="assets/img/events/event1.png" alt="event">
 			<div class="event_info">
 				<div class="event_title">
 					
-					<%=e.getNombre()%>
+					nombre funcion
 				</div>
 				<div class="speakers">
 					<strong>Speakers</strong> <span>Maria Smith, Gabriel
 						Hernandez, Michael Williams</span>
 				</div>
-				<div class="event_date">February 14, 2018</div>
+				<div class="event_date"><%=f.getHoraFecha()%></div>
 			</div>
 			<div class="event_word">
 				<div class="row justify-content-center">
-					<div class="col-md-6 col-12"><%=e.getTipoEvento()%></div>
+					<div class="col-md-6 col-12">Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. In rhoncus massa nec gravida tempus.
+						Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit
+						nisl a accumsan. Pellentesque convallis consectetur tortor id
+						placerat. Curabitur a pulvinar nunc. Maecenas laoreet finibus
+						lectus, at volutpat ligula euismod.</div>
 					<div class="col-md-6 col-12">Lorem ipsum dolor sit amet,
 						consectetur adipiscing elit. In rhoncus massa nec gravida tempus.
 						Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit
@@ -139,12 +134,7 @@
 						lectus, at volutpat ligula euismod.</div>
 				</div>
 			</div>
-			<form method="GET" action="/TicketUnlaWeb/ControladorFunciones">
-			
-			<input type="radio" name="evento" value="<%=e.getIdEvento()%>" id="evento"><label for="evento"></label>
-			<input type="submit" value="Reservar">
-			
-			</form>
+			<a href="#" class="readmore_btn">Reservar</a>
 		</div>
     			
     			
@@ -152,30 +142,6 @@
 		
 	</div>
 </section>
-<!--event section end -->
-
-
-
-<!--get tickets section -->
-<section class="bg-img pt100 pb100" style="background-image: url('assets/img/bg/tickets.png');">
-    <div class="container">
-        <div class="section_title mb30">
-            <h3 class="title color-light">
-                GEt your tikets
-            </h3>
-        </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-md-9 text-md-left text-center color-light">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus massa nec gravida tempus. Integer iaculis in aazzzCurabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at volutpat ligula euismod.
-            </div>
-            <div class="col-md-3 text-md-right text-center">
-                <a href="#" class="btn btn-primary btn-rounded mt30">buy now</a>
-            </div>
-        </div>
-    </div>
-</section>
-<!--get tickets section end-->
-
 <!--footer start -->
 <footer>
     <div class="container">
@@ -286,13 +252,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <div class="col-12 col-md-6 ">
                 <ul class="footer_menu">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="#">Inicio</a>
                     </li>
                     <li>
                         <a href="#">Speakers</a>
                     </li>
                     <li>
-                        <a href="#">Events</a>
+                        <a href="#">Eventos</a>
                     </li>
                     <li>
                         <a href="#">News</a>
@@ -306,7 +272,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </div>
 <!--footer end -->
-
 <!-- jquery -->
 <script src="assets/js/jquery.min.js"></script>
 <!-- bootstrap -->

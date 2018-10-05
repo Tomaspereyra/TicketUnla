@@ -18,4 +18,12 @@
     <servlet-name>ControladorAgregar</servlet-name>
     <url-pattern>/ControladorAgregar</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ControladorFunciones</servlet-name>
+    <servlet-class>controladores.ControladorFunciones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorFunciones</servlet-name>
+    <url-pattern>/ControladorFunciones</url-pattern>
+  </servlet-mapping>
 </web-app>
