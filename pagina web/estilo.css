@@ -1,0 +1,27 @@
+@charset "ISO-8859-1";
+
+.login {
+	background: #ffffff;
+	width: 320px;
+	height: 320px;
+	position: relative;
+	left: 400px;
+	border: 6px double #000000;
+	box-shadow: 2px 5px 10px black; /*agrega sombra a la caja*/
+}
+.login input{
+  display: block;
+}
+.formulario input[type="text"]{
+	width: 50%;
+	padding: 20px;
+	margin-bottom: 20px;
+	border-radius: 3px;
+	border: 2px solid #4fb560;
+	font-family: Arial;
+	font-size: 16px;
+}
+
+.enlaceAgregar{
+	color: blue;
+}
