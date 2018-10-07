@@ -1,21 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ page import="dao.FuncionDao" %>
-<%@ page import="datos.Funcion" %>
+<%@ page import="dao.AuditorioDao" %>
 <%@ page import="java.util.List" %>
-<%@ page import="datos.Funciones" %>
+<%@ page import="datos.Auditorio" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="es">
 <head>
     <!-- ========== Meta Tags ========== -->
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <meta name="description" content="Evento -Event Html Template">
     <meta name="keywords" content="Evento , Event , Html, Template">
     <meta name="author" content="ColorLib">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- ========== Title ========== -->
-    <title> Funciones</title>
+    <title> Ticket Unla - Auditorios</title>
     <!-- ========== Favicon Ico ========== -->
     <!--<link rel="icon" href="fav.ico">-->
     <!-- ========== STYLESHEETS ========== -->
@@ -38,6 +36,7 @@
     <div class="loader-outter"></div>
     <div class="loader-inner"></div>
 </div>
+
 <!--header start here -->
 <header class="header navbar fixed-top navbar-expand-md">
     <div class="container">
@@ -47,34 +46,24 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#headernav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="lnr lnr-text-align-right"></span>
         </button>
-        
         <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
             <ul class=" nav navbar-nav menu">
                 <li class="nav-item">
                     <a class="nav-link active" href="/TicketUnlaWeb/index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Speakers</a>
+                    <a class="nav-link " href="#">Auditorios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link " href="/TicketUnlaWeb/EventosDisponibles.jsp">Eventos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">News</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Contact</a>
-                </li>
-                <li class="search_btn">
-                    <a  href="#">
-                        <i class="ion-ios-search"></i>
-                    </a>
-                </li>
+                                
             </ul>
         </div>
     </div>
 </header>
 <!--header end here-->
+
 <!--page title section-->
 <section class="inner_cover parallax-window" data-parallax="scroll" data-image-src="assets/img/bg/bg-img.png">
     <div class="overlay_dark"></div>
@@ -83,7 +72,7 @@
             <div class="col-12">
                 <div class="inner_cover_content">
                     <h3>
-                       Funciones
+                        Auditorios
                     </h3>
                 </div>
             </div>
@@ -91,122 +80,61 @@
 
         <div class="breadcrumbs">
             <ul>
-                <li><a href="/TicketUnlaWeb/index.html">Inicio</a>  |   </li>
-                <li><span>Funciones</span></li>
+                <li><a href="#">Inicio</a>   |  </li>
+                <li><span>Auditorio</span></li>
             </ul>
         </div>
     </div>
 </section>
 <!--page title section end-->
 
+
+<!--events section -->
 <section class="pt100 pb100">
     <div class="container">
-  
-   
-		<% List<Funcion> funciones = (List)request.getAttribute("funciones"); 
-    		for (Funcion f : funciones) { %>
-    			
-    		<div class="event_box">
-			<img src="assets/img/events/event1.png" alt="event">
-			<div class="event_info">
-				<div class="event_title">
-					
-					<%=f.getEvento().getNombre()%>
-				</div>
-				<div class="speakers">
-					<strong>Speakers</strong> <span>Maria Smith, Gabriel
-						Hernandez, Michael Williams</span>
-				</div>
-				<div class="event_date"><%=Funciones.traerFechaCorta(f.getHoraFecha()) %></div>
-			</div>
-			<div class="event_word">
-				<div class="row justify-content-center">
-					<div class="col-md-6 col-12">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. In rhoncus massa nec gravida tempus.
-						Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit
-						nisl a accumsan. Pellentesque convallis consectetur tortor id
-						placerat. Curabitur a pulvinar nunc. Maecenas laoreet finibus
-						lectus, at volutpat ligula euismod.</div>
-					<div class="col-md-6 col-12">Lorem ipsum dolor sit amet,
-						consectetur adipiscing elit. In rhoncus massa nec gravida tempus.
-						Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit
-						nisl a accumsan. Pellentesque convallis consectetur tortor id
-						placerat. Curabitur a pulvinar nunc. Maecenas laoreet finibus
-						lectus, at volutpat ligula euismod.</div>
-				</div>
-			</div>
-			<a href="#" class="readmore_btn">Reservar</a>
-		</div>
-		<!--event info -->
-<section class="pt100 pb100">
-    <div class="container">
+    
         <div class="row justify-content-center">
-            <div class="col-6 col-md-3  ">
-                <div class="icon_box_two">
-                    <i class="ion-ios-calendar-outline"></i>
-                    <div class="content">
-                        <h5 class="box_title">
-                            FECHA
+            <!--blog section start -->
+            <div class="col-12 col-md-8">
+            <%List<Auditorio> auditorios = AuditorioDao.getIntance().traerAuditorios(); %>
+             <% for (Auditorio a : auditorios){ %>
+                <div class="blog_card">
+                    <img src="assets/img/blog/blog1.png" alt="blog News ">
+                    <div class="blog_box_data">
+                        <span class="blog_date">
+                           Capacidad <%=a.getCapacidad()%>
+                        </span>
+                        
+                        <h5>
+                            <%=a.getNombre()%>
                         </h5>
-                        <p>
-                            <%=Funciones.traerFechaCortaHora(f.getHoraFecha()) %>
+                        <p class="blog_word">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In rhoncus massa nec gravida tempus. Integer iaculis in lacus a sollicitudin. Ut hendrerit hendrerit nisl a accumsan. Pellentesque convallis consectetur tortor id placerat. Curabitur a pulvinar nunc. Maecenas laoreet finibus lectus, at volutpat ligula euismod.
                         </p>
+                        <a href="#" class="readmore_btn">Read More</a>
                     </div>
                 </div>
-            </div>
+                <%} %>            
 
-            <div class="col-6 col-md-3  ">
-                <div class="icon_box_two">
-                    <i class="ion-ios-location-outline"></i>
-                    <div class="content">
-                        <h5 class="box_title">
-                            Ubicacion
-                        </h5>
-                        <p>
-                           <%=f.getEvento().getAuditorio().getDireccion()%>
-                        </p>
-                    </div>
+                <!--pagenition menu-->
+                <div class="mt70 mb70">
+                    <ul class="nav_menu">
+                        <li class="active"><span>01</span></li>
+                        <li><a href="#">02</a></li>
+                        <li><a href="#">03</a></li>
+                    </ul>
                 </div>
-            </div>
+                <!--pageintion -->
 
-            <div class="col-6 col-md-3  ">
-                <div class="icon_box_two">
-                    <i class="ion-ios-person-outline"></i>
-                    <div class="content">
-                        <h5 class="box_title">
-                            speakers
-                        </h5>
-                        <p>
-                            Natalie James
-                            + guests
-                        </p>
-                    </div>
-                </div>
             </div>
+            <!--blog section end-->
 
-            <div class="col-6 col-md-3  ">
-                <div class="icon_box_two">
-                    <i class="ion-ios-pricetag-outline"></i>
-                    <div class="content">
-                        <h5 class="box_title">
-                            tikets
-                        </h5>
-                        <p>
-                            $65 early bird
-                        </p>
-                    </div>
-                </div>
-            </div>
+            
+
         </div>
     </div>
 </section>
-<!--event info end -->
-    			
-    			
-    		<% } %>
-		
-	</div>
-</section>
+<!--event section end -->
 <!--footer start -->
 <footer>
     <div class="container">
@@ -317,13 +245,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <div class="col-12 col-md-6 ">
                 <ul class="footer_menu">
                     <li>
-                        <a href="#">Inicio</a>
+                        <a href="#">Home</a>
                     </li>
                     <li>
                         <a href="#">Speakers</a>
                     </li>
                     <li>
-                        <a href="#">Eventos</a>
+                        <a href="#">Events</a>
                     </li>
                     <li>
                         <a href="#">News</a>
@@ -337,6 +265,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </div>
 <!--footer end -->
+
 <!-- jquery -->
 <script src="assets/js/jquery.min.js"></script>
 <!-- bootstrap -->

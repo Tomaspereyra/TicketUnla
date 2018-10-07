@@ -35,10 +35,7 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <script src="assets/js/jquery.min.js"></script>
     
-    <script type = "text/javascrip">
-            $(document).ready(function(){
-             var 
-    </script>
+  
 </head>
 <body>
 <div class="loader">
@@ -59,25 +56,18 @@
         <div class="collapse navbar-collapse flex-sm-row-reverse" id="headernav">
             <ul class=" nav navbar-nav menu">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Speakers</a>
+                    <a class="nav-link " href="#">Auditorios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " href="#">Events</a>
+                    <a class="nav-link " href="#">Eventos</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">News</a>
-                </li>
-                <li class="nav-item">
+                 <li class="nav-item">
                     <a class="nav-link " href="#">Contact</a>
                 </li>
-                <li class="search_btn">
-                    <a  href="#">
-                        <i class="ion-ios-search"></i>
-                    </a>
-                </li>
+                
             </ul>
         </div>
     </div>

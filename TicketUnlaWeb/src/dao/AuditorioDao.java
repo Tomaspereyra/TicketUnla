@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -100,6 +102,19 @@ public class AuditorioDao {
 			session.close();
 		}
 		return objeto;
+		
+	}
+	@SuppressWarnings("unchecked")
+	public List<Auditorio> traerAuditorios() throws HibernateException{
+		List<Auditorio> auditorios = null;
+		try {
+			iniciaOperacion();
+			auditorios = session.createQuery("from Auditorio a order by a.nombre asc").list();
+		}
+		finally {
+			session.close();
+		}
+		return auditorios;
 		
 	}
 
