@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 	<class name="datos.Auditorio" table="auditorio">
-		<id column="idAuditorio" name="idAuditorio">
+		<id column="idauditorio" name="idauditorio">
 			<generator class="identity">
 			</generator>
 		</id>

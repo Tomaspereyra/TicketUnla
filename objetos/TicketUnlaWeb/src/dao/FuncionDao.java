@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -86,6 +88,19 @@ public class FuncionDao {
 			session.close();
 		}
 		return objeto;
+	}
+	@SuppressWarnings("unchecked")
+	public List<Funcion> traerFunciones(int idEvento) throws HibernateException{
+		List<Funcion> funciones = null;
+		try {
+			iniciaOperacion();
+			funciones = session.createQuery("from Funcion f inner join fetch f.evento s where s.idEvento="+idEvento).list();
+		}
+		finally {
+			session.close();
+			
+		}
+		return funciones;
 	}
 
 }

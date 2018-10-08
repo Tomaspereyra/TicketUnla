@@ -1,0 +1,13 @@
+@charset "ISO-8859-1";
+.ventana{
+	position:relative;
+}
+.login {
+	
+	position: absolute;
+	left: 400px;
+	top:50px;
+
+}
+
+

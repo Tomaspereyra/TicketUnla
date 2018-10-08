@@ -1,5 +1,8 @@
 package test;
 
+import java.util.List;
+
+import dao.AsientoDao;
 import dao.AuditorioDao;
 import dao.ClienteDao;
 import dao.DescuentoDao;
@@ -7,7 +10,9 @@ import dao.EventoDao;
 import dao.FuncionDao;
 import dao.ReservaDao;
 import dao.SectorDao;
+import dao.SectorNumeradoDao;
 import dao.UsuarioDao;
+import datos.Asiento;
 import datos.Auditorio;
 import datos.Cliente;
 import datos.Descuento;
@@ -15,6 +20,7 @@ import datos.Evento;
 import datos.Funcion;
 import datos.Reserva;
 import datos.Sector;
+import datos.SectorNumerado;
 import datos.Usuario;
 import negocio.UsuarioABM;
 
@@ -25,12 +31,35 @@ public class Test {
 		
 		
 		
-		Usuario u = new Usuario();
-		UsuarioDao.getIntance().agregar(u);
+		/*Usuario u = new Usuario();
+		UsuarioDao.getIntance().agregar(u);*/
 
-		// Usuario bus = UsuarioDao.getIntance().traerUsuario(1);
+	    /* Usuario bus = UsuarioDao.getIntance().traerUsuario("'tomas'");
+	     System.out.println(bus.getNombre());
+	     List<Funcion> funciones = FuncionDao.getIntance().traerFunciones(1);
+	     for(Funcion f : funciones) {
+	    	 System.out.println(f.getIdFuncion());
+	     }*/
+	     SectorDao.getIntance().traerSectores(AuditorioDao.getIntance().traerAuditorio(1));
+	    /* SectorNumerado sectornumerado = SectorNumeradoDao.getIntance().traerSectorNumeradoYAsientos(6);
+	     for(Asiento asiento:sectornumerado.getLstAsientos()) {
+	    	 System.out.println(asiento.getCodigo());
+	     }*/
+		/*SectorNumerado sector = SectorNumeradoDao.getIntance().traerSectorNumeradoYAsientos(6);
+		List<Asiento> lstAsientos= AsientoDao.getIntance().traerAsientos(sector);
+		for(Asiento a: lstAsientos) {
+			System.out.println(a.getCodigo());
+		}*/
+		/*List<Evento> eventos = EventoDao.getIntance().traerEventos();
+		for (Evento e : eventos) {
+			System.out.println(e.getNombre());
+		}*/
+	     //Auditorio auditorio = AuditorioDao.getIntance().traerAuditorioYSectores(6);
+	   /*  for(Sector sector : auditorio.getLstSectores()) {
+	    	 System.out.println(sector.getCapacidadTotal());
+	     }*/
 
-		Cliente c = new Cliente();
+		/*Cliente c = new Cliente();
 		c.setUsuario(u);
 		ClienteDao.getIntance().agregar(c);
 
@@ -54,7 +83,20 @@ public class Test {
 		SectorDao.getIntance().agregar(s);
 
 		Reserva r = new Reserva(funcion, c);
-		ReservaDao.getIntance().agregar(r);
+		ReservaDao.getIntance().agregar(r);*/
+		/*SectorNumerado sectorNumerado = new SectorNumerado();
+		sectorNumerado = SectorNumeradoDao.getIntance().traerSectorNumerado(1);
+		Asiento asiento = new Asiento();
+		int fila =0, columna=0;
+		for (fila=0; fila<20; fila++) {
+			for (columna =0; columna<10; columna++) {
+				String codigo = String.format("%d%d", fila, columna);
+				asiento.setCodigo(codigo);
+				asiento.setSectorNumerado(sectorNumerado);
+				AsientoDao.getIntance().agregar(asiento);
+			}
+		}*/
+		
 		
 
 	}

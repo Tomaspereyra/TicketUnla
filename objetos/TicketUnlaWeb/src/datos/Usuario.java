@@ -3,25 +3,25 @@ package datos;
 public class Usuario {
 
 	private int idUsuario;
-	private String usuario;
+	private String nombre;
 	private String contrasena;
 	private String email;
 
 	public Usuario() {
 	}
 
-	public Usuario(String usuario, String contrasena, String email) {
-		this.usuario = usuario;
+	public Usuario(String nombre, String contrasena, String email) {
+		this.nombre = nombre;
 		this.contrasena = contrasena;
 		this.email = email;
 	}
 
-	public String getUsuario() {
-		return usuario;
+	public String getNombre() {
+		return nombre;
 	}
 
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public String getContrasena() {

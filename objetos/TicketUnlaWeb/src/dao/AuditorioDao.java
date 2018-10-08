@@ -1,5 +1,8 @@
 package dao;
 
+import java.util.List;
+
+import org.hibernate.Hibernate;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -76,16 +79,43 @@ public class AuditorioDao {
 		}
 	}
 
-	public Auditorio traerAuditorio(String nombre) throws HibernateException {
+	public Auditorio traerAuditorio(int id) throws HibernateException {
 		Auditorio objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Auditorio) session.createQuery("from Auditorio a where a.nombre=" + nombre).uniqueResult();
+			objeto = (Auditorio) session.createQuery("from Auditorio a where a.idauditorio=" + id).uniqueResult();
 		} finally {
 			session.close();
 		}
 		return objeto;
+	}
+	public Auditorio traerAuditorioYSectores(int idAuditorio) throws HibernateException{
+		Auditorio objeto = null;
+		try {
+			iniciaOperacion();
+			String hql="from Auditorio a where a.idauditorio="+idAuditorio;
+			objeto=(Auditorio) session.createQuery(hql).uniqueResult();
+			Hibernate.initialize(objeto.getLstSectores());
+		}
+		finally {
+			session.close();
+		}
+		return objeto;
+		
+	}
+	@SuppressWarnings("unchecked")
+	public List<Auditorio> traerAuditorios() throws HibernateException{
+		List<Auditorio> auditorios = null;
+		try {
+			iniciaOperacion();
+			auditorios = session.createQuery("from Auditorio a order by a.nombre asc").list();
+		}
+		finally {
+			session.close();
+		}
+		return auditorios;
+		
 	}
 
 }

@@ -1,5 +1,7 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -87,5 +89,18 @@ public class EventoDao {
 		}
 		return objeto;
 	}
+	@SuppressWarnings("unchecked")
+	public List<Evento> traerEventos() throws HibernateException{
+		List<Evento> eventos = null;
+		try {
+			iniciaOperacion();
+			eventos = session.createQuery("from Evento e order by e.nombre, e.tipoEvento asc").list();}
+		finally {
+			session.close();
+		}
+		return eventos;
+			
+		}
 
 }
+

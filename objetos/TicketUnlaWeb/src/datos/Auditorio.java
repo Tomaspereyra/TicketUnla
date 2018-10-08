@@ -4,7 +4,7 @@ import java.util.Set;
 
 public class Auditorio {
 
-	private int idAuditorio;
+	private int idauditorio;
 	private String nombre;
 	private String direccion;
 	private int capacidad;
@@ -74,12 +74,12 @@ public class Auditorio {
 		this.lstFunciones = lstFunciones;
 	}
 
-	public int getIdAuditorio() {
-		return idAuditorio;
+	public int getidauditorio() {
+		return idauditorio;
 	}
 
-	protected void setIdAuditorio(int idAuditorio) {
-		this.idAuditorio = idAuditorio;
+	protected void setidauditorio(int idauditorio) {
+		this.idauditorio = idauditorio;
 	}
 
 	public Set<Sector> getLstSectores() {

@@ -1,10 +1,14 @@
 package dao;
 
+import java.util.List;
+
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import datos.Auditorio;
 import datos.Sector;
+import datos.SectorNumerado;
 
 public class SectorDao {
 	private static Session session;
@@ -87,5 +91,18 @@ public class SectorDao {
 		}
 		return objeto;
 	}
+	@SuppressWarnings("unchecked")
+	public List<SectorNumerado> traerSectores(Auditorio a) throws HibernateException{
+		List<SectorNumerado> sectores = null;
+		try {
+			iniciaOperacion();
+			sectores = session.createQuery("from Sector s inner join fetch s.auditorio s where s.idauditorio="+a.getidauditorio()).list();
+		}
+		finally {
+			session.close();
+		}
+		return sectores;
+	}
+	
 
 }

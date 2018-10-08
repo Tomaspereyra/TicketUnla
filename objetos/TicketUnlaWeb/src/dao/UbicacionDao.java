@@ -76,12 +76,12 @@ public class UbicacionDao {
 		}
 	}
 
-	public Ubicacion traerEvento(String codigo) throws HibernateException {
+	public Ubicacion traerUbicacion(int idUbicacion) throws HibernateException {
 		Ubicacion objeto = null;
 
 		try {
 			iniciaOperacion();
-			objeto = (Ubicacion) session.createQuery("from ubicacion e where e.nombre=" + codigo).uniqueResult();
+			objeto = (Ubicacion) session.createQuery("from ubicacion e where e.nombre=" + idUbicacion).uniqueResult();
 		} finally {
 			session.close();
 		}

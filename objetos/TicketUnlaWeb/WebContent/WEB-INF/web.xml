@@ -8,16 +8,35 @@
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
-    <welcome-file>vistaRegistroCliente.jsp</welcome-file>
+    <welcome-file>VistaRegistroUsuario.jsp</welcome-file>
   </welcome-file-list>
-  <servlet>
-
-<servlet-name>ControladorRegistrarCliente</servlet-name>
-<servlet-class>controladores.ControladorRegistrarCliente</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>ControladorRegistrarCliente</servlet-name>
-<url-pattern>/RegistroClienteJSP</url-pattern>
-</servlet-mapping>
   
+  <servlet>
+    <servlet-name>ControladorAgregar</servlet-name>
+    <servlet-class>controladores.ControladorAgregar</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>ControladorAgregar</servlet-name>
+    <url-pattern>/ControladorAgregar</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ControladorFunciones</servlet-name>
+    <servlet-class>controladores.ControladorFunciones</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorFunciones</servlet-name>
+    <url-pattern>/ControladorFunciones</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+    <servlet-name>ControladorSectores</servlet-name>
+    <servlet-class>controladores.ControladorSectores</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ControladorSectores</servlet-name>
+    <url-pattern>/ControladorSectores</url-pattern>
+  </servlet-mapping>
 </web-app>
